@@ -8,6 +8,11 @@ describe("ResetPassword", () => {
   const mockNewPassword = "newPassword10@";
   const mockNonMatchingNewPassword = "newPassword11&";
 
+  it("should match the snapshot", () => {
+    const { container } = render(<ResetPassword />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   it("the submit button should only be enabled when the form is valid", () => {
     render(<ResetPassword />);
 
